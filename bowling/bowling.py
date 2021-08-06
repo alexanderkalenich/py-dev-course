@@ -43,7 +43,6 @@ def get_score(game_result, rules=None):
                         if frames >= 2:
                             if 'X' in dict_analized_res[key - 2]:
                                 total_score += int(value[0])
-
                     else:
                         total_score += 10
                 else:
@@ -74,23 +73,17 @@ def get_score(game_result, rules=None):
                                 total_score += (int(value[0]))
                     else:
                         total_score += int(value[0])
-
                 else:
                     total_score += int(value[0])
-
-
 
             elif value[1].isdigit() and value[0] == '-' in value:
                 if frames >= 1:
                     if 'X' in dict_analized_res[key - 1]:
                         total_score += (int(value[1])) * 2
-
                     else:
                         total_score += int(value[1])
-
                 else:
                     total_score += int(value[1])
-
 
             else:
                 sum_int = int(value[0]) + int(value[1])
@@ -100,7 +93,6 @@ def get_score(game_result, rules=None):
                         if frames >= 2:
                             if 'X' in dict_analized_res[key - 2]:
                                 total_score += int(value[0])
-
                     elif '/' in dict_analized_res[key - 1]:
                         total_score += sum_int + int(value[0])
                     else:
@@ -128,7 +120,6 @@ def get_score(game_result, rules=None):
     if frames != 10:
         raise ValueError('Количество фреймов не равно 10')
 
-    # print(total_score)
     return total_score
 
 
